@@ -6,3 +6,11 @@ management:
     web:
       exposure:
         include: health,info
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
