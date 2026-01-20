@@ -1,22 +1,21 @@
-package com.example.demo.controller;
+package com.controller;
 
-import com.example.demo.service.KafkaProducerService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.service.KafkaProducerService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/kafka")
 public class MessageController {
 
-    private final KafkaProducerService producer;
+    private final KafkaProducerService producerService;
 
-    public MessageController(KafkaProducerService producer) {
-        this.producer = producer;
+    public MessageController(KafkaProducerService producerService) {
+        this.producerService = producerService;
     }
 
     @PostMapping("/publish")
-    public String publish(@RequestBody String msg) {
-        producer.sendMessage(msg);
+    public String publishMessage(@RequestBody String message) {
+        producerService.sendMessage(message);
         return "Message sent to Kafka";
     }
 }
