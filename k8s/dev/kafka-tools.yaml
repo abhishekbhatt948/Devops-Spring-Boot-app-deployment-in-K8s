@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-tools
+spec:
+  restartPolicy: Never
+  containers:
+    - name: kafka-tools
+      image: apache/kafka:4.0.0
+      command: ["sleep", "3600"]
