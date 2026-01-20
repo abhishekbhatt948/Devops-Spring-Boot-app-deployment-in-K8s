@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.service;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,6 @@ public class KafkaProducerService {
     }
 
     public void sendMessage(String message) {
-        kafkaTemplate.send("demo-topic", message);
+        kafkaTemplate.send("demo-events", message);
     }
 }
