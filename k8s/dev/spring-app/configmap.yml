@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 data:
   SPRING_PROFILES_ACTIVE: dev
-  SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/appdb
+  SPRING_DATASOURCE_URL: jdbc:mysql://mysql.dev.svc.cluster.local:3306/appdb
   SPRING_DATASOURCE_USERNAME: appuser
   SPRING_DATASOURCE_PASSWORD: apppass
-  KAFKA_BOOTSTRAP_SERVERS: host.docker.internal:9092
+  KAFKA_BOOTSTRAP_SERVERS: kafka.dev.svc.cluster.local:9092
